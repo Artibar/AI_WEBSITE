@@ -31,7 +31,7 @@ app.use('/api/website', websiteRouter)
 app.use(express.static(path.join(__dirname, '../frontend/dist')))
 
 // 👇 Catch-all route for React
-app.get('*', (req, res) => {
+app.get('/{*path}', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'))
 })
 
