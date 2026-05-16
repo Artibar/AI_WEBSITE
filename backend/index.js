@@ -15,12 +15,18 @@ const PORT = process.env.PORT || 5000
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin:['http://localhost:5173', 'http://localhost:5174',   "https://ai-website-yddy.onrender.com"],
-
+  origin:['http://localhost:5173', 'http://localhost:5174', "https://ai-website-yddy.onrender.com"],
   credentials: true,
 }))
+
+// 👇 THIS IS MISSING IN YOUR CODE — ADD THIS
+app.get('/', (req, res) => {
+  res.send('Server is running! 🚀')
+})
+
 app.use('/api', authRouter)
 app.use('/api/website', websiteRouter)
+
 app.listen(PORT, ()=>{
   connectToDB()
   console.log(`Server is running on PORT : ${PORT}`)
