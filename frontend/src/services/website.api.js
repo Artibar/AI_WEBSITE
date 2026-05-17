@@ -75,9 +75,7 @@ export const deployWeb = async ({ id }) => {
 
 export const slugWeb = async ({ slug }) => {
     try {
-        const response = await axios.get(`${base_url}/slug/${slug}`, {
-            withCredentials: true
-        })
+        const response = await axios.get(`${base_url}/slug/${slug}`)
         return response.data
     }
     catch (error) {

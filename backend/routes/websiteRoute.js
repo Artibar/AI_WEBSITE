@@ -12,6 +12,6 @@ websiteRouter.put('/update/:id',      protectRoute, updateWebsite)
 
 // ✅ Param routes last
 websiteRouter.get('/id/:id',          protectRoute, getWebsite)
-websiteRouter.get('/slug/:slug',      protectRoute, getBySlug)
+websiteRouter.get('/slug/:slug',     getBySlug)
 
 export default websiteRouter
