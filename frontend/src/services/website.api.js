@@ -1,7 +1,8 @@
 
 import axios from 'axios'
 
-const base_url = "http://localhost:5000/api/website"
+const VITE_API_URL='https://ai-website-yddy.onrender.com'
+const base_url = VITE_API_URL + '/api/website'
 
 export const generateWebsite = async ({ prompt }) => {
     try {

@@ -1,7 +1,8 @@
 import axios from 'axios'
 
+const VITE_API_URL = 'https://ai-website-yddy.onrender.com'
 
-const base_URL = 'http://localhost:5000/api'
+const base_URL = VITE_API_URL + '/api'
 
 export const signup = async ({ name, email, password }) => {
     try {

@@ -239,7 +239,7 @@ export const getBySlug = async (req, res) => {
         if (!website) {
             return res.status(404).json({ message: "Website not found" })
         }
-        return res.status(200).json(website)
+       return res.status(200).json({ success: true, website })
     } catch (error) {
         console.error("Error in getBySlug", error)
         res.status(500).json({ message: "Error in getBySlug", error })

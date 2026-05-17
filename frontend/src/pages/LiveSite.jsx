@@ -23,7 +23,7 @@ const LiveSite = () => {
         const res = await getWebsiteBySlug(id)
         console.log('res:', res)                // ← check shape, remove after
 
-        const latestCode = res?.website?.latestCode || res?.latestCode
+      const latestCode = res?.website?.latestCode 
         if (!latestCode) {
           setError('No website content found.')
           return
