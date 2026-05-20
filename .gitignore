@@ -1,1 +1,2 @@
-backend/.env
+backend/.envnode_modules/
+.env
