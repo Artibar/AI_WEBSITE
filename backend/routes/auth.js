@@ -1,6 +1,8 @@
 import express from 'express'
 import { googleAuth, signup, login, logout, currentUser } from '../controller/authController.js';
 import protectRoute from '../middleware/protectRoute.js'
+
+
 const authRouter = express.Router()
 
 authRouter.post('/google', googleAuth)

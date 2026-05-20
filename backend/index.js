@@ -17,6 +17,12 @@ const PORT = process.env.PORT || 5000
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+app.use((req, res, next) => {
+  res.setHeader('Cross-Origin-Opener-Policy', 'unsafe-none')
+  res.setHeader('Cross-Origin-Embedder-Policy', 'unsafe-none')
+  next()
+})
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
@@ -26,6 +32,7 @@ app.use(cors({
 
 app.use('/api', authRouter)
 app.use('/api/website', websiteRouter)
+
 
 // 👇 Serve frontend
 app.use(express.static(path.join(__dirname, '../frontend/dist')))
