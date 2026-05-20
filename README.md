@@ -16,6 +16,8 @@ No coding required. Just describe. Generate. Preview.
 
 ## ✨ Features
 
+LIVELINK: https://ai-website-yddy.onrender.com
+
 ### 🔐 Firebase Authentication
 - Email & Password sign-up / login
 - One-click **Google OAuth** login
@@ -121,33 +123,8 @@ cd ../client && npm install
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`
+The app will be available at [`http://localhost:5173`](https://ai-website-yddy.onrender.com/)
 
----
-
-## 📂 Project Structure
-
-```
-ai-website-generator/
-├── client/                   # React frontend
-│   ├── src/
-│   │   ├── components/       # Reusable UI components
-│   │   ├── pages/            # Route-level pages
-│   │   ├── store/            # Redux slices & store
-│   │   ├── firebase/         # Firebase config & auth helpers
-│   │   └── App.jsx
-│   └── package.json
-│
-├── server/                   # Express backend
-│   ├── routes/               # API route handlers
-│   ├── models/               # Mongoose schemas
-│   ├── controllers/          # Business logic
-│   ├── middleware/           # Auth & validation middleware
-│   ├── schemas/              # Zod validation schemas
-│   └── index.js
-│
-└── README.md
-```
 
 ---
 
@@ -191,9 +168,11 @@ This project is licensed under the [MIT License](LICENSE).
 </div>
 
 
-<img width="1920" height="1128" alt="Screenshot 2026-05-17 142423" src="https://github.com/user-attachments/assets/08df9e78-c3ee-4b00-a6aa-7f0ff895174e" />
-<img width="1920" height="1128" alt="Screenshot 2026-05-17 142342" src="https://github.com/user-attachments/assets/f37426da-0068-4f33-a6b3-97a977513303" />
-<img width="1920" height="1128" alt="Screenshot 2026-05-17 142329" src="https://github.com/user-attachments/assets/c70f1c09-78a7-4fd3-bf21-6e575149f716" />
-<img width="1920" height="1128" alt="Screenshot 2026-05-17 142310" src="https://github.com/user-attachments/assets/6f186c07-2f6c-4259-80e5-fb8bed7901f7" />
-<img width="1920" height="1128" alt="Screenshot 2026-05-14 155534" src="https://github.com/user-attachments/assets/940249cd-8ceb-4db5-a983-186c6a1147e3" />
+<img width="1891" height="1003" alt="Screenshot 2026-05-20 151347" src="https://github.com/user-attachments/assets/d481fdef-7c5f-48cc-96e6-107cf53aa3f1" />
+<img width="1909" height="1008" alt="Screenshot 2026-05-20 151323" src="https://github.com/user-attachments/assets/f282abc3-28f2-4cf7-86cc-348b612110fa" />
+<img width="1891" height="1003" alt="Screenshot 2026-05-20 151217" src="https://github.com/user-attachments/assets/89b8db7a-202b-4a7b-9b44-d3bc6fe0d2fa" />
+<img width="1889" height="1001" alt="Screenshot 2026-05-20 151150" src="https://github.com/user-attachments/assets/00914d6c-18fe-4f6c-a2f6-6254b85fd085" />
+<img width="1892" height="1002" alt="Screenshot 2026-05-20 134927" src="https://github.com/user-attachments/assets/529cac5d-99a9-4da8-bdc7-37319e88f4ae" />
+<img width="1892" height="1008" alt="Screenshot 2026-05-20 134906" src="https://github.com/user-attachments/assets/0470ac28-f9d5-43b4-8b2a-fe675df4ff10" />
+
 
