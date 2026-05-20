@@ -5,7 +5,7 @@ import { useWebsite } from '../hooks/useWebsite.js'
 import '../style/preview.css'
 
 const Preview = ({ websiteId }) => {
-  const { updateWebsite } = useWebsite()
+  const { updateWebsites } = useWebsite()
   const [website, setWebsite] = useState(null)
   const [updateLoading, setUpdateLoading] = useState(false)
   const [activeView, setActiveView] = useState('preview')
@@ -36,7 +36,7 @@ const Preview = ({ websiteId }) => {
     if (!prompt.trim() || updateLoading) return
     setUpdateLoading(true)
     try {
-      const res = await updateWebsite(websiteId, prompt)
+      const res = await updateWebsites(websiteId, prompt)
       if (res?.website) setWebsite(res.website)
       setPrompt('')
     } catch (error) {

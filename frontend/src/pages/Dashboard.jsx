@@ -16,10 +16,11 @@ const Dashboard = () => {
   
  const handleDeploy = async (id) => {
     try {
+      const siteUrl = `https://ai-website-yddy.onrender.com/site/${id}`
       const res = await deploy(id)
-      window.open(`${res.url}`, '_blank')  
+      window.open(`${siteUrl}`, '_blank')  
       setWebsites((prev) =>
-        prev.map((w) => w._id === id ? { ...w, deployed: true, deployUrl: res.url } : w)  
+        prev.map((w) => w._id === id ? { ...w, deployed: true, deployUrl: res.siteUrl } : w)  
       )
     } catch (error) {
       console.log('error in deploy', error)
