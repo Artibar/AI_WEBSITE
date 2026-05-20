@@ -136,15 +136,6 @@ export const updateWebsite = async (req, res) => {
             return res.status(404).json({ message: "Website not found" })
         }
 
-        const user = await User.findById(req.user._id)
-        if (!user) {
-            return res.status(404).json({ message: "User not found" })
-        }
-
-        if (user.credits < 100) {
-            return res.status(400).json({ message: "Not enough credits to update website" })
-        }
-
         const updatePrompt = `UPDATE THIS FULLSTACK WEBSITE.
 CURRENT CODE:
 ${website.latestCode}
@@ -158,12 +149,8 @@ RETURN ONLY RAW JSON:
   "code": "<updated full website>"
 }`
 
-        let raw = ''
-        let parsed = null
-
-        // ✅ same fix — removed undefined array loop
-        raw = await generateResponce(updatePrompt)
-        parsed = extractJson(raw)
+        let raw = await generateResponce(updatePrompt)
+        let parsed = extractJson(raw)
 
         if (!parsed) {
             raw = await generateResponce(updatePrompt + "\n\nRETURN ONLY RAW JSON")
@@ -177,18 +164,15 @@ RETURN ONLY RAW JSON:
 
         website.conversation.push(
             { role: "user", content: prompt },
-            { role: "ai", content: parsed.message } // ✅ was "parsed.message" (string literal)
+            { role: "ai", content: parsed.message }
         )
         website.latestCode = parsed.code
         await website.save()
 
-        user.credits = user.credits - 100
-        await user.save()
-
         return res.status(200).json({
+            success: true,
             message: "Website updated successfully",
-            code: parsed.code,
-            remainingCredits: user.credits
+            website: website,
         })
 
     } catch (error) {
